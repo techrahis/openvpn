@@ -1,0 +1,1 @@
+web: docker build -t openvpn-server . && docker run -p 1194:1194/udp openvpn-server
