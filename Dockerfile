@@ -25,7 +25,7 @@ RUN mkdir -p $OPENVPN_CONFIG_DIR && \
     ln -s /usr/share/easy-rsa/* $EASYRSA_DIR
 
 # Copy default server configuration template
-RUN gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz > $OPENVPN_CONFIG_DIR/server.conf
+COPY server.conf $OPENVPN_CONFIG_DIR/server.conf
 
 # Configure EasyRSA
 WORKDIR $EASYRSA_DIR
